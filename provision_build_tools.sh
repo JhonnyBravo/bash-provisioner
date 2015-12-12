@@ -1,9 +1,26 @@
 #!/bin/bash
 
+package="gcc make"
 i_flag=0
 u_flag=0
 
-while getopts "iu" option
+function usage(){
+cat <<_EOT_
+Usage:
+   provision_build_tools.sh [-i] [-u] [-h]
+
+Description:
+   ${1} をインストール / アンインストールします。
+
+Options:
+   -i ${1} をインストールします。
+   -u ${1} をアンインストールします。
+   -h ヘルプを表示します。
+_EOT_
+exit 1
+}
+
+while getopts "iuh" option
 do
    case $option in
       i)
@@ -12,25 +29,17 @@ do
       u)
          u_flag=1
          ;;
+      h)
+         usage "$package"
+         ;;
       \?)
-         cat <<_EOT_
-Usage:
-   provision_build_tools.sh [-i] [-u]
-
-Description:
-   gcc, make をインストールまたはアンインストールします。
-
-Options:
-   -i gcc, make をインストールします。
-   -u gcc, make をアンインストールします。
-_EOT_
-         exit 1
+         usage "$package"
          ;;
    esac
 done
 
 if [ $i_flag -eq 1 ]; then
-   apt-get install gcc make
+   apt-get install $package
 elif [ $u_flag -eq 1 ]; then
-   apt-get purge gcc make
+   apt-get purge $package
 fi
