@@ -3,7 +3,24 @@
 e_flag=0
 j_flag=0
 
-while getopts "ej" option
+function usage(){
+cat <<_EOT_
+Usage:
+   update_user_dirs.sh [-e] [-j] [-h]
+
+Description:
+   ホームディレクトリ直下のディレクトリ名を英語化 / 日本語化します。
+   例) ~/ドキュメント -> ~/Documents
+
+Options:
+   -e ディレクトリ名を英語化します。
+   -j ディレクトリ名を日本語化します。
+   -h ヘルプを表示します。
+_EOT_
+exit 1
+}
+
+while getopts "ejh" option
 do
    case $option in
       e)
@@ -12,20 +29,11 @@ do
       j)
          j_flag=1
          ;;
+      h)
+         usage
+         ;;
       \?)
-         cat <<_EOT_
-Usage:
-   update_user_dirs.sh [-e] [-j]
-
-Description:
-   ~/Documents, ~/Downloads 等のホームディレクトリ直下のディレクトリ名を
-   英語化または日本語化します。
-
-Options:
-   -e ディレクトリ名を英語化します。
-   -j ディレクトリ名を日本語化します。
-_EOT_
-         exit 1
+         usage
          ;;
    esac
 done
