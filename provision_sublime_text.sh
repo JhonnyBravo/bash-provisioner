@@ -58,7 +58,6 @@ elif [ $p_flag -eq 1 ]; then
    sublime-text -h
 
    if [ $? -eq 0 ]; then
-      sublime-text &
       wget -P ~/.config/sublime-text-2/Installed\ Packages https://packagecontrol.io/Package%20Control.sublime-package
    fi
 fi
