@@ -5,7 +5,7 @@ u_path=".config/sublime-text-2/Packages/User/"
 function usage(){
 cat <<_EOT_
 Usage:
-   set_pkg_ctrl.sh [path] [-h]
+   set_pkg_ctrl.sh path [-h]
 
 Description:
    指定したファイルを User/Package Control.sublime-settings へコピーします。
