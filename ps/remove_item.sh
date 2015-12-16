@@ -41,7 +41,7 @@ if [ -f "$path" ]; then
 elif [ -d "$path" ]; then
   rmdir "$path"
 elif [ $r_flag -eq 1 ]; then
-  shift $(expr $OPTIND - 2)
+  shift $((OPTIND - 2))
   path="$1"
   rm -R "$path"
 fi
