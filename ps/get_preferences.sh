@@ -8,39 +8,39 @@ d_flag=0
 function usage(){
 cat <<_EOT_
 Usage:
-   get_preferences.sh [-u] [-d] [-h]
+  get_preferences.sh [-u] [-d] [-h]
 
 Description:
-   Preferences.sublime-settings を現在のディレクトリへコピーします。
+  Preferences.sublime-settings を現在のディレクトリへコピーします。
 
 Options:
-   -u User/Preferences.sublime-settings をコピーします。
-   -d Default/Preferences.sublime-settings をコピーします。
-   -h ヘルプを表示します。
+  -u User/Preferences.sublime-settings をコピーします。
+  -d Default/Preferences.sublime-settings をコピーします。
+  -h ヘルプを表示します。
 _EOT_
 exit 1
 }
 
 while getopts "udh" option
 do
-   case $option in
-      u)
-         u_flag=1
-         ;;
-      d)
-         d_flag=1
-         ;;
-      h)
-         usage
-         ;;
-      \?)
-         usage
-         ;;
-   esac
+  case $option in
+    u)
+      u_flag=1
+      ;;
+    d)
+      d_flag=1
+      ;;
+    h)
+      usage
+      ;;
+    \?)
+      usage
+      ;;
+  esac
 done
 
 if [ $u_flag -eq 1 ]; then
-   cp ~/${u_path} ./
+  cp ~/${u_path} ./
 elif [ $d_flag -eq 1 ]; then
-   cp ~/${d_path} ./
+  cp ~/${d_path} ./
 fi
