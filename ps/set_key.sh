@@ -31,8 +31,6 @@ key=$(echo "$2" | cut -f 1 -d :)
 value=$(echo "$2" | cut -f 2 -d :)
 
 mv "$file_path" "${file_path}.origin"
-# shellcheck disable=SC2002
-cat "${file_path}.origin" \
-  | sed -e 's/\t/\    /' \
-  | sed -e "/${key}:/c \    ${key}:${value}" >"$file_path"
+sed -e 's/\t/\    /' <"${file_path}.origin" | \
+sed -e "/${key}:/c \    ${key}:${value}" >"$file_path"
 rm "${file_path}.origin"
