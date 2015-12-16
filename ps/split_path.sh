@@ -3,14 +3,14 @@
 function usage(){
 cat <<_EOT_
 Usage:
-  split_path.sh [-l] [-p] path [-h]
+  split_path.sh [-l path] [-p path] [-h]
 
 Description:
-  path の末尾 / path の親ディレクトリを返します。
+  path の末尾または path の親ディレクトリを返します。
 
 Options:
-  -l path path の末尾を返します。
-  -p path path の親ディレクトリを返します。
+  -l path  path の末尾を返します。
+  -p path  path の親ディレクトリを返します。
   -h ヘルプを表示します。
 _EOT_
 exit 1
@@ -37,7 +37,7 @@ do
   esac
 done
 
-shift $(expr $OPTIND - 1)
+shift $((OPTIND - 1))
 path="$1"
 
 if [ $l_flag -eq 1 ]; then
