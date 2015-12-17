@@ -30,6 +30,5 @@ file_path="$1"
 key="$2"
 
 mv "$file_path" "${file_path}.origin"
-cat "${file_path}.origin" | sed -e 's/\t/\    /' | sed -e "/^}/i \    ${key}" >"$file_path"
+sed -e 's/\t/\    /' <"${file_path}.origin" | sed -e "/^}/i \    ${key}" >"$file_path"
 rm "${file_path}.origin"
-./clear_content.sh
