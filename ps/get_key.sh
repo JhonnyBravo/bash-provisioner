@@ -29,4 +29,4 @@ done
 file_path="$1"
 key="$2"
 
-cat "${file_path}" | grep -e "\"${key}\":" | cut -f 2 -d :
+grep -e "\"${key}\":" <"${file_path}" | cut -f 2 -d :
