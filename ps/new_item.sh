@@ -9,8 +9,9 @@ Description:
   ファイル / ディレクトリを新規作成します。
 
 Options:
-  -f 新規ファイルを作成します。 value を省略した場合、空のファイルを作成します。
-  -d 新規ディレクトリを作成します。
+  -f path [value]  新規ファイルを作成します。
+                   value を省略した場合、空のファイルを作成します。
+  -d path  新規ディレクトリを作成します。
   -h ヘルプを表示します。
 _EOT_
 exit 1
@@ -37,7 +38,7 @@ do
   esac
 done
 
-shift $(expr $OPTIND - 2)
+shift $((OPTIND - 2))
 path="$1"
 
 if [ $f_flag -eq 1 ]; then
