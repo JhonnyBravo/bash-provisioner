@@ -44,14 +44,16 @@ do
 done
 
 if [ $i_flag -eq 1 ]; then
-  shift $(expr $OPTIND - 1)
+  shift $((OPTIND - 1))
   pattern="$1"
   path="$2"
+  # shellcheck disable=SC2010
   ls "${path:=.}" | grep "${pattern}"
 elif [ $e_flag -eq 1 ]; then
-  shift $(expr $OPTIND - 1)
+  shift $((OPTIND - 1))
   pattern="$1"
   path="$2"
+  # shellcheck disable=SC2012
   ls "${path:=.}" | sed -e "/${pattern}/d"
 else
   path="$1"
