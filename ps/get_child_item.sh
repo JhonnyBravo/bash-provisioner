@@ -3,9 +3,9 @@
 function usage(){
 cat <<_EOT_
 Usage:
-  get_child_item.sh [path] [-h]
-  get_child_item.sh -i pattern [path]
-  get_child_item.sh -e pattern [path]
+  ${0} [path] [-h]
+  ${0} -i pattern [path]
+  ${0} -e pattern [path]
 
 Description:
   指定した path の配下にあるファイル / ディレクトリを一覧表示します。
