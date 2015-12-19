@@ -15,14 +15,14 @@ u_flag=0
 function usage(){
 cat <<_EOT_
 Usage:
-  provision_${package}.sh [-i] [-u] [-h]
+  ${0} [-i] [-u] [-h]
 
 Description:
-  ${package} をインストール / アンインストールします。
+  ${1} をインストール / アンインストールします。
 
 Options:
-  -i ${package} をインストールします。
-  -u ${package} をアンインストールします。
+  -i ${1} をインストールします。
+  -u ${1} をアンインストールします。
   -h ヘルプを表示します。
 _EOT_
 exit 1
