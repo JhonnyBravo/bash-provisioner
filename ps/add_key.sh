@@ -3,7 +3,7 @@
 function usage(){
 cat <<_EOT_
 Usage:
-  add_key.sh file_path key:value [-h]
+  ${0} path key:value [-h]
 
 Description:
   JSON ファイルへ新しい key:value を追加します。
@@ -26,9 +26,9 @@ do
   esac
 done
 
-file_path="$1"
+path="$1"
 key="$2"
 
-mv "$file_path" "${file_path}.origin"
-sed -e 's/\t/\    /' <"${file_path}.origin" | sed -e "/^}/i \    ${key}" >"$file_path"
-rm "${file_path}.origin"
+mv "$path" "${path}.origin"
+sed -e 's/\t/\  /g' <"${path}.origin" | sed -e "/^}/i \  ${key}" >"$path"
+rm "${path}.origin"
