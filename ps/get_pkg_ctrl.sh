@@ -9,14 +9,16 @@ d_flag=0
 function usage(){
 cat <<_EOT_
 Usage:
-  get_pkg_ctrl.sh [-u] [-d] [-h]
+  ${0} [-u] [-d] [-h]
 
 Description:
   Package Control.sublime-settings を現在のディレクトリへコピーします。
 
 Options:
-  -u User/Package Control.sublime-settings をコピーします。
-  -d Default の Package Control.sublime-settings をコピーします。
+  -u ${u_path}
+     をコピーします。
+  -d ${d_path}
+     をコピーします。
   -h ヘルプを表示します。
 _EOT_
 exit 1
