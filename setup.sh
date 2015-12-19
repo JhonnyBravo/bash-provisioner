@@ -8,7 +8,7 @@ u_flag=0
 function usage(){
 cat <<_EOT_
 Usage:
-  setup.sh [-i] [-u] [-h]
+  ${0} [-i] [-u] [-h]
 
 Description:
   ${scripts} 配下にあるファイルを ${destination} へ
