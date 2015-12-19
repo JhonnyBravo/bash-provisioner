@@ -3,7 +3,7 @@
 function usage(){
 cat <<_EOT_
 Usage:
-  clear_content.sh path [-h]
+  ${0} path [-h]
 
 Description:
   ファイルの内容を削除します。
