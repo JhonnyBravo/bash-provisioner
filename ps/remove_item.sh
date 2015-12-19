@@ -3,7 +3,7 @@
 function usage(){
 cat <<_EOT_
 Usage:
-  remove_item.sh [-r] path [-h]
+  ${0} [-r] path [-h]
 
 Description:
   ファイル / ディレクトリを削除します。
