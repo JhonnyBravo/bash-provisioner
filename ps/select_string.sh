@@ -3,9 +3,9 @@
 function usage(){
 cat <<_EOT_
 Usage:
-  select_string.sh -i pattern path
-  select_string.sh -e pattern path
-  select_string.sh -h
+  ${0} -i pattern path
+  ${0} -e pattern path
+  ${0} -h
 
 Description:
   path に指定したファイルを読み込み、
