@@ -3,7 +3,7 @@
 function usage(){
 cat <<_EOT_
 Usage:
-  get_key.sh file_path key [-h]
+  ${0} path key [-h]
 
 Description:
   JSON ファイルの key の値を取得します。
@@ -26,7 +26,7 @@ do
   esac
 done
 
-file_path="$1"
+path="$1"
 key="$2"
 
-grep -e "\"${key}\":" <"${file_path}" | cut -f 2 -d :
+grep -e "\"${key}\":" <"${path}" | cut -f 2 -d :
