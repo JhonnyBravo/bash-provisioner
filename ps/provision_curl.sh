@@ -7,7 +7,7 @@ u_flag=0
 function usage(){
 cat <<_EOT_
 Usage:
-  provision_${1}.sh [-i] [-u] [-h]
+  ${0} [-i] [-u] [-h]
 
 Description:
   ${1} をインストール / アンインストールします。
