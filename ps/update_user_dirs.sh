@@ -6,7 +6,7 @@ j_flag=0
 function usage(){
 cat <<_EOT_
 Usage:
-  update_user_dirs.sh [-e] [-j] [-h]
+  ${0} [-e] [-j] [-h]
 
 Description:
   ホームディレクトリ直下のディレクトリ名を英語化 / 日本語化します。
