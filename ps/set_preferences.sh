@@ -5,10 +5,11 @@ u_path=".config/sublime-text-2/Packages/User/"
 function usage(){
 cat <<_EOT_
 Usage:
-  set_preferences.sh path [-h]
+  ${0} path [-h]
 
 Description:
-  指定したファイルを User/Preferences.sublime-settings へコピーします。
+  指定したファイルを ${u_path}Preferences.sublime-settings
+  へコピーします。
 
 Options:
   -h ヘルプを表示します。
