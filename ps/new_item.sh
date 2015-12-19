@@ -3,7 +3,7 @@
 function usage(){
 cat <<_EOT_
 Usage:
-  new_item.sh [-f path [value]] [-d path] [-h]
+  ${0} [-f path [value]] [-d path] [-h]
 
 Description:
   ファイル / ディレクトリを新規作成します。
