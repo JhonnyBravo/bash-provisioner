@@ -3,7 +3,7 @@
 function usage(){
 cat <<_EOT_
 Usage:
-  split_path.sh [-l path] [-p path] [-h]
+  ${0} [-l path] [-p path] [-h]
 
 Description:
   path の末尾または path の親ディレクトリを返します。
