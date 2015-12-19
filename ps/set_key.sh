@@ -3,7 +3,7 @@
 function usage(){
 cat <<_EOT_
 Usage:
-  set_key.sh file_path key:value [-h]
+  ${0} path key:value [-h]
 
 Description:
   JSON ファイルの key の値を更新します。
@@ -26,11 +26,11 @@ do
   esac
 done
 
-file_path="$1"
+path="$1"
 key=$(echo "$2" | cut -f 1 -d :)
 value=$(echo "$2" | cut -f 2 -d :)
 
-mv "$file_path" "${file_path}.origin"
-sed -e 's/\t/\    /' <"${file_path}.origin" | \
-sed -e "/${key}:/c \    ${key}:${value}" >"$file_path"
-rm "${file_path}.origin"
+mv "$path" "${path}.origin"
+sed -e 's/\t/\  /g' <"${path}.origin" | \
+sed -e "/${key}:/c \  ${key}:${value}" >"$path"
+rm "${path}.origin"
