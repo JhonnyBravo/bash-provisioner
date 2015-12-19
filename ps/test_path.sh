@@ -3,8 +3,8 @@
 function usage(){
 cat <<_EOT_
 Usage:
-  test_path.sh path
-  test_path.sh [-l path] [-c path] [-h]
+  ${0} path
+  ${0} [-l path] [-c path] [-h]
 
 Description:
   path が実在すれば 0 を、存在しない場合は 1 を返します。
