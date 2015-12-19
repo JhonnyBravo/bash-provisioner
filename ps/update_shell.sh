@@ -6,7 +6,7 @@ do
     h)
       cat <<_EOT_
 Usage:
-  update_shell.sh [-h]
+  ${0} [-h]
 
 Description:
   dash を有効化 / 無効化します。
