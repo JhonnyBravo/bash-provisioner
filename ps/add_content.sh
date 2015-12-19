@@ -3,7 +3,7 @@
 function usage(){
 cat <<_EOT_
 Usage:
-  add_content.sh path value [-h]
+  ${0} path value [-h]
 
 Description:
   ファイルへ値を追記します。
