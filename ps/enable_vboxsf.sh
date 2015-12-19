@@ -3,7 +3,7 @@
 function usage(){
 cat <<_EOT_
 Usage:
-  enable_vboxsf.sh user_name [-h]
+  ${0} user_name [-h]
 
 Description:
   Virtual Box のゲスト OS へ共有ディレクトリへのアクセス権を付与します。
