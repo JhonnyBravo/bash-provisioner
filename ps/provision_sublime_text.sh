@@ -8,7 +8,7 @@ p_flag=0
 function usage(){
 cat <<_EOT_
 Usage:
-  provision_sublime_text.sh [-i] [-u] [-p] [-h]
+  ${0} [-i] [-u] [-p] [-h]
 
 Description:
   ${1} をインストール / アンインストールします。
