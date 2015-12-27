@@ -48,6 +48,7 @@ fi
 if [ $i_flag -eq 1 ]; then
   if [ ! -d ~/.nodebrew ]; then
     curl -L git.io/nodebrew | perl - setup
+    # shellcheck disable=SC2016
     echo 'export PATH=$HOME/.nodebrew/current/bin:$PATH' >>~/.bashrc
   fi
 elif [ $u_flag -eq 1 ]; then
