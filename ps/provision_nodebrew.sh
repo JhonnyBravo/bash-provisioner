@@ -38,6 +38,13 @@ do
   esac
 done
 
+curl -h
+
+if [ $? -ne 0 ]; then
+  echo 'curl をインストールしてください。'
+  exit 2
+fi
+
 if [ $i_flag -eq 1 ]; then
   if [ ! -d ~/.nodebrew ]; then
     curl -L git.io/nodebrew | perl - setup
