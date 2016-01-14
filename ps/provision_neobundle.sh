@@ -95,6 +95,7 @@ if [ $i_flag -eq 1 ]; then
     echo "NeoBundle 'tpope/vim-fugitive'"
     echo "NeoBundle 'ctrlpvim/ctrlp.vim'"
     echo "NeoBundle 'flazz/vim-colorschemes'"
+    echo "NeoBundle 'editorconfig/editorconfig-vim'"
     echo ""
     echo "\" You can specify revision/branch/tag."
     echo "NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }"
