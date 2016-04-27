@@ -43,9 +43,9 @@ if [ $i_flag -eq 1 ]; then
 
   if [ $? -ne 0 ]; then
     add-apt-repository ppa:daniel.pavel/solaar
-    apt-get update
   fi
 
+  apt-get update
   apt-get install "$package"
 elif [ $u_flag -eq 1 ]; then
   apt-get purge "$package"
