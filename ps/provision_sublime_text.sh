@@ -1,6 +1,7 @@
 #!/bin/bash
 
-package="sublime-text ibus-mozc emacs-mozc"
+PACKAGE="ibus-mozc emacs-mozc"
+
 i_flag=0
 u_flag=0
 p_flag=0
@@ -11,11 +12,11 @@ Usage:
   ${0} [-i] [-u] [-p] [-h]
 
 Description:
-  ${1} をインストール / アンインストールします。
+  sublime-text ${1} をインストール / アンインストールします。
 
 Options:
-  -i ${1} をインストールします。
-  -u ${1} をアンインストールします。
+  -i sublime-text ${1} をインストールします。
+  -u sublime-text ${1} をアンインストールします。
   -p Package Control.sublime-package をインストールします。
   -h ヘルプを表示します。
 _EOT_
@@ -35,31 +36,32 @@ do
       p_flag=1
       ;;
     h)
-      usage "$package"
+      usage "$PACKAGE"
       ;;
     \?)
-      usage "$package"
+      usage "$PACKAGE"
       ;;
   esac
 done
 
 if [ $i_flag -eq 1 ]; then
-  sublime-text -h
+  subl -h
 
   if [ $? -ne 0 ]; then
-    add-apt-repository ppa:webupd8team/sublime-text-2
-    apt-get update
+    wget -P ~/Downloads https://download.sublimetext.com/sublime-text_build-3103_i386.deb
+    dpkg -i ~/Downloads/sublime-text*.deb
   fi
 
   # shellcheck disable=SC2086
-  apt-get install $package
+  apt-get install $PACKAGE
 elif [ $u_flag -eq 1 ]; then
   # shellcheck disable=SC2086
-  apt-get purge $package
+  dpkg -P sublime-text
+  apt-get purge $PACKAGE
 elif [ $p_flag -eq 1 ]; then
-  sublime-text -h
+  subl -h
 
   if [ $? -eq 0 ]; then
-    wget -P ~/.config/sublime-text-2/Installed\ Packages https://packagecontrol.io/Package%20Control.sublime-package
+    wget -P ~/.config/sublime-text-3/Installed\ Packages https://packagecontrol.io/Package%20Control.sublime-package
   fi
 fi
