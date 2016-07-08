@@ -1,6 +1,6 @@
 #!/bin/bash
 
-script_source="ps"
+script_source="bin"
 script_destination="/usr/local/bin"
 
 man_source="docs/build/man"
@@ -99,7 +99,7 @@ elif [ $u_flag -eq 1 ]; then
 
   for file in $man_list
   do
-    source="${man_source}/${file}"
-    rm "${source}.gz"
+    source="${man_destination}/${file}"
+    rm "${source}"
   done
 fi
