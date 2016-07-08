@@ -185,22 +185,22 @@ htmlhelp_basename = 'bash-powershelldoc'
 # -- Options for LaTeX output ---------------------------------------------
 
 latex_elements = {
-# The paper size ('letterpaper' or 'a4paper').
-#'papersize': 'letterpaper',
+    # The paper size ('letterpaper' or 'a4paper').
+    #'papersize': 'letterpaper',
 
-# The font size ('10pt', '11pt' or '12pt').
-#'pointsize': '10pt',
+    # The font size ('10pt', '11pt' or '12pt').
+    #'pointsize': '10pt',
 
-# Additional stuff for the LaTeX preamble.
-#'preamble': '',
+    # Additional stuff for the LaTeX preamble.
+    #'preamble': '',
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'bash-powershell.tex', u'bash-powershell Documentation',
-   u'Jhonny Bravo', 'manual'),
+    ('index', 'bash-powershell.tex', u'bash-powershell Documentation',
+     u'Jhonny Bravo', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -229,8 +229,74 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'bash-powershell', u'bash-powershell Documentation',
-     [u'Jhonny Bravo'], 1)
+    ('add_content.sh', 'add_content.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('add_key.sh', 'add_key.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('clear_content.sh', 'clear_content.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('enable_vboxsf.sh', 'enable_vboxsf.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('get_child_item.sh', 'get_child_item.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('get_key.sh', 'get_key.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('get_network_settings.sh', 'get_network_settings.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('get_pkg_ctrl.sh', 'get_pkg_ctrl.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('get_preferences.sh', 'get_preferences.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('new_item.sh', 'new_item.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('provision_build_tools.sh', 'provision_build_tools.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('provision_curl.sh', 'provision_curl.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('provision_git.sh', 'provision_git.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('provision_gufw.sh', 'provision_gufw.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('provision_neobundle.sh', 'provision_neobundle.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('provision_nodebrew.sh', 'provision_nodebrew.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('provision_python_tools.sh', 'provision_python_tools.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('provision_shellcheck.sh', 'provision_shellcheck.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('provision_solaar.sh', 'provision_solaar.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('provision_sublime_text.sh', 'provision_sublime_text.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('provision_ubuntu_make.sh', 'provision_ubuntu_make.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('provision_vim.sh', 'provision_vim.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('remove_item.sh', 'remove_item.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('remove_key.sh', 'remove_key.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('select_string.sh', 'select_string.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('set_content.sh', 'set_content.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('set_key.sh', 'set_key.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('set_pkg_ctrl.sh', 'set_pkg_ctrl.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('set_preferences.sh', 'set_preferences.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('split_path.sh', 'split_path.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('test_path.sh', 'test_path.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('update_shell.sh', 'update_shell.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('update_tzdata.sh', 'update_tzdata.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
+    ('update_user_dirs.sh', 'update_user_dirs.sh',
+        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -243,9 +309,9 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'bash-powershell', u'bash-powershell Documentation',
-   u'Jhonny Bravo', 'bash-powershell', 'One line description of project.',
-   'Miscellaneous'),
+    ('index', 'bash-powershell', u'bash-powershell Documentation',
+     u'Jhonny Bravo', 'bash-powershell', 'One line description of project.',
+     'Miscellaneous'),
 ]
 
 # Documents to append as an appendix to all manuals.
