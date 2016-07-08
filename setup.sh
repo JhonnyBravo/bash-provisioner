@@ -1,7 +1,11 @@
 #!/bin/bash
 
-scripts="ps"
-destination="/usr/local/bin"
+script_source="ps"
+script_destination="/usr/local/bin"
+
+man_source="docs/build/man"
+man_destination="/usr/local/man/man1"
+
 i_flag=0
 u_flag=0
 
@@ -11,12 +15,19 @@ Usage:
   ${0} [-i] [-u] [-h]
 
 Description:
-  ${scripts} 配下にあるファイルを ${destination} へ
+  スクリプトファイルとマニュアルページを
   インストール / アンインストールします。
 
+Files:
+  ${script_destination}: スクリプトファイルのインストール先。
+  ${script_source}: インストールするスクリプトを収めたディレクトリ。
+
+  ${man_destination}: マニュアルページのインストール先。
+  ${man_source}: インストールするマニュアルを収めたディレクトリ。
+
 Options:
-  -i ${scripts} 配下にあるファイルを ${destination} へインストールします。
-  -u ${scripts} 配下にあるファイルを ${destination} からアンインストールします。
+  -i スクリプトファイルとマニュアルページをインストールします。
+  -u スクリプトファイルとマニュアルページをアンインストールします。
   -h ヘルプを表示します。
 _EOT_
 exit 1
@@ -40,17 +51,55 @@ do
   esac
 done
 
-file_list=$(ls "$scripts")
+script_list=$(ls "$script_source")
 
 if [ $i_flag -eq 1 ]; then
-  for file in $file_list
+  # スクリプトファイルのインストール
+  for file in $script_list
   do
-    source="${scripts}/${file}"
-    install "$source" "$destination"
+    source="${script_source}/${file}"
+    install "$source" "$script_destination"
+  done
+
+  # マニュアルページのインストール
+  which sphinx-build
+
+  if [ $? -ne 0 ]; then
+    provision_python_tools.sh -i
+  fi
+
+  (
+    cd docs
+    make clean man
+  )
+
+  test_path.sh -c "$man_destination"
+
+  if [ $? -ne 0 ]; then
+    new_item.sh -d "$man_destination"
+  fi
+
+  man_list=$(ls "$man_source")
+
+  for file in $man_list
+  do
+    source="${man_source}/${file}"
+    gzip "$source"
+    cp "${source}.gz" "$man_destination"
   done
 elif [ $u_flag -eq 1 ]; then
-  for file in $file_list
+  # スクリプトファイルのアンインストール
+  for file in $script_list
   do
-    rm "${destination}/${file}"
+    rm "${script_destination}/${file}"
+  done
+
+  # マニュアルページのアンインストール
+  man_list=$(ls "$man_source")
+
+  for file in $man_list
+  do
+    source="${man_source}/${file}"
+    rm "${source}.gz"
   done
 fi
