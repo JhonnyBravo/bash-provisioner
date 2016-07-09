@@ -1,15 +1,24 @@
 #!/bin/bash
 
+script_name=$(basename "$0")
+
 function usage(){
 cat <<_EOT_
-Usage:
-  ${0} path [-h]
+NAME
+       ${script_name}
 
-Description:
-  ファイルの内容を削除します。
+USAGE:
+       ${script_name} path [-h]
 
-Options:
-  -h ヘルプを表示します。
+
+DESCRIPTION:
+       ファイルの内容を削除します。
+
+ARGUMENTS
+       path   内容を削除するファイルのパス。
+
+OPTIONS:
+       -h     ヘルプを表示します。
 _EOT_
 exit 1
 }
