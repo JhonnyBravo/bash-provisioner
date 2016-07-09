@@ -1,15 +1,26 @@
 #!/bin/bash
 
+script_name=$(basename "$0")
+
 function usage(){
 cat <<_EOT_
-Usage:
-  ${0} path value [-h]
+NAME
+       ${script_name}
 
-Description:
-  ファイルへ値を追記します。
+USAGE:
+       ${script_name} path value [-h]
 
-Options:
-  -h ヘルプを表示します。
+
+DESCRIPTION:
+       ファイルへ値を追記します。
+
+ARGUMENTS:
+       path   値を追記するファイルのパス。
+
+       value  ファイルへ追記する値。
+
+OPTIONS:
+       -h     ヘルプを表示します。
 _EOT_
 exit 1
 }
