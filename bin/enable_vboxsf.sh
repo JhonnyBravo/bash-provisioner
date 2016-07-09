@@ -1,15 +1,25 @@
 #!/bin/bash
 
+script_name=$(basename "$0")
+
 function usage(){
 cat <<_EOT_
-Usage:
-  ${0} user_name [-h]
+NAME
+       ${script_name}
 
-Description:
-  Virtual Box のゲスト OS へ共有ディレクトリへのアクセス権を付与します。
+USAGE:
+       ${script_name} user_name [-h]
 
-Options:
-  -h ヘルプを表示します。
+
+DESCRIPTION:
+       Virtual Box のゲスト OS へ共有ディレクトリへのアクセス権を付与します。
+
+ARGUMENTS:
+       user_name
+              共有ディレクトリへのアクセスを許可するユーザの名前。
+
+OPTIONS:
+       -h     ヘルプを表示します。
 _EOT_
 exit 1
 }
