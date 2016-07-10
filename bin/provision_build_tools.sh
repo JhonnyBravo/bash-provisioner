@@ -38,10 +38,10 @@ do
       u_flag=1
       ;;
     h)
-      usage "$package"
+      usage
       ;;
     \?)
-      usage "$package"
+      usage
       ;;
   esac
 done
