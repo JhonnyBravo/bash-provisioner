@@ -1,4 +1,7 @@
 #!/bin/bash
+
+script_name=$(basename "$0")
+
 u_path=".config/sublime-text-2/Packages/User/Preferences.sublime-settings"
 d_path=".config/sublime-text-2/Packages/Default/Preferences.sublime-settings"
 
@@ -7,18 +10,22 @@ d_flag=0
 
 function usage(){
 cat <<_EOT_
-Usage:
-  ${0} [-u] [-d] [-h]
+NAME
+       ${script_name}
 
-Description:
-  Preferences.sublime-settings を現在のディレクトリへコピーします。
+USAGE:
+       ${script_name} [-u] [-d] [-h]
 
-Options:
-  -u ${u_path}
-     をコピーします。
-  -d ${d_path}
-     をコピーします。
-  -h ヘルプを表示します。
+
+DESCRIPTION:
+       Preferences.sublime-settings を現在のディレクトリへコピーします。
+
+OPTIONS:
+       -u     ${u_path} をコピーします。
+
+       -d     ${d_path} をコピーします。
+
+       -h     ヘルプを表示します。
 _EOT_
 exit 1
 }
