@@ -22,23 +22,30 @@ NVIM_INSTALL_DIR="$NVIM_BUNDLE_DIR/neobundle.vim"
 NVIM_INIT_PATH=~/.config/nvim/init.vim
 
 # shell script config
-PACKAGE=neobundle
+script_name=$(basename "$0")
 
+package=neobundle
 i_flag=0
 u_flag=0
 
 function usage(){
 cat <<_EOT_
-Usage:
-  ${0} [-i] [-u] [-h]
+NAME
+       ${script_name}
 
-Description:
-  ${1} をインストール / アンインストールします。
+USAGE:
+       ${script_name} [-i] [-u] [-h]
 
-Options:
-  -i ${1} をインストールします。
-  -u ${1} をアンインストールします。
-  -h ヘルプを表示します。
+
+DESCRIPTION:
+       ${package} をインストール / アンインストールします。
+
+OPTIONS:
+       -i     ${package} をインストールします。
+
+       -u     ${package} をアンインストールします。
+
+       -h     ヘルプを表示します。
 _EOT_
 exit 1
 }
@@ -54,10 +61,10 @@ do
       u_flag=1
       ;;
     h)
-      usage "$PACKAGE"
+      usage
       ;;
     \?)
-      usage "$PACKAGE"
+      usage
       ;;
   esac
 done
