@@ -1,25 +1,32 @@
 #!/bin/bash
 
+script_name=$(basename "$0")
+
 apt_pkg="python-pip python-sphinx python-tk"
 py_pkg="pip-init autopep8"
+package="${apt_pkg} ${py_pkg}"
+
 i_flag=0
 u_flag=0
 
 function usage(){
 cat <<_EOT_
-Usage:
-  ${0} [-i] [-u] [-h]
+NAME
+       ${script_name}
 
-Description:
-  ${1}
-  をインストール / アンインストールします。
+USAGE:
+       ${script_name} [-i] [-u] [-h]
 
-Options:
-  -i ${1}
-     をインストールします。
-  -u ${1}
-     をアンインストールします。
-  -h ヘルプを表示します。
+
+DESCRIPTION:
+       ${package} をインストール / アンインストールします。
+
+OPTIONS:
+       -i     ${package} をインストールします。
+
+       -u     ${package} をアンインストールします。
+
+       -h     ヘルプを表示します。
 _EOT_
 exit 1
 }
@@ -41,10 +48,10 @@ do
       u_flag=1
       ;;
     h)
-      usage "${apt_pkg} ${py_pkg}"
+      usage
       ;;
     \?)
-      usage "${apt_pkg} ${py_pkg}"
+      usage
       ;;
   esac
 done
