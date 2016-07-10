@@ -1,23 +1,36 @@
 #!/bin/bash
 
+script_name=$(basename "$0")
+
 function usage(){
 cat <<_EOT_
-Usage:
-  ${0} [path] [-h]
-  ${0} -i pattern [path]
-  ${0} -e pattern [path]
+NAME
+       ${script_name}
 
-Description:
-  指定した path の配下にあるファイル / ディレクトリを一覧表示します。
-  path を省略した場合、現在のディレクトリ内に存在する
-  ファイル / ディレクトリを一覧表示します。
+USAGE:
+       ${script_name} [path] [-h]
+       ${script_name} -i pattern [path]
+       ${script_name} -e pattern [path]
 
-Options:
-  -i pattern [path]  pattern に合致する名前を持つ
-                     ファイル / ディレクトリを一覧表示します。
-  -e pattern [path]  pattern に合致しない名前を持つ
-                     ファイル / ディレクトリを一覧表示します。
-  -h ヘルプを表示します。
+
+DESCRIPTION:
+       指定した path の配下にあるファイル / ディレクトリを一覧表示します。
+       path を省略した場合、現在のディレクトリ内に存在する
+       ファイル / ディレクトリを一覧表示します。
+
+ARGUMENTS:
+       path   ディレクトリのパス。
+
+OPTIONS:
+       -i pattern
+              pattern に合致する名前を持つ
+              ファイル / ディレクトリを一覧表示します。
+
+       -e pattern
+              pattern に合致しない名前を持つ
+              ファイル / ディレクトリを一覧表示します。
+
+       -h     ヘルプを表示します。
 _EOT_
 exit 1
 }
