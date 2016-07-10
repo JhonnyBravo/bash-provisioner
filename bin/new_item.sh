@@ -1,18 +1,30 @@
 #!/bin/bash
 
+script_name=$(basename "$0")
+
 function usage(){
 cat <<_EOT_
-Usage:
-  ${0} [-f path [value]] [-d path] [-h]
+NAME
+       ${script_name}
 
-Description:
-  ファイル / ディレクトリを新規作成します。
+USAGE:
+       ${script_name} -f path [value]
+       ${script_name} -d path
+       ${script_name} -h
 
-Options:
-  -f path [value]  新規ファイルを作成します。
-                   value を省略した場合、空のファイルを作成します。
-  -d path  新規ディレクトリを作成します。
-  -h ヘルプを表示します。
+
+DESCRIPTION:
+       ファイル / ディレクトリを新規作成します。
+
+OPTIONS:
+       -f path [value]
+              新規ファイルを作成します。
+              value を省略した場合、空のファイルを作成します。
+
+       -d path
+              新規ディレクトリを作成します。
+
+       -h     ヘルプを表示します。
 _EOT_
 exit 1
 }
