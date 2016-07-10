@@ -1,5 +1,7 @@
 #!/bin/bash
 
+script_name=$(basename "$0")
+
 package="git"
 i_flag=0
 u_flag=0
@@ -7,18 +9,24 @@ c_flag=0
 
 function usage(){
 cat <<_EOT_
-Usage:
-  ${0} [-i] [-u] [-c] [-h]
+NAME
+       ${script_name}
 
-Description:
-  ${1} をインストール / アンインストールします。
-  または ${1} へユーザ情報を登録します。
+USAGE:
+       ${script_name} [-i] [-u] [-c] [-h]
 
-Options:
-  -i ${1} をインストールします。
-  -u ${1} をアンインストールします。
-  -c ${1} へユーザ情報を登録します。
-  -h ヘルプを表示します。
+
+DESCRIPTION:
+       ${package} をインストール / アンインストールします。
+
+OPTIONS:
+       -i     ${package} をインストールします。
+
+       -u     ${package} をアンインストールします。
+
+       -c     ${package} へユーザ情報を登録します。
+
+       -h     ヘルプを表示します。
 _EOT_
 exit 1
 }
@@ -36,10 +44,10 @@ do
       c_flag=1
       ;;
     h)
-      usage "$package"
+      usage
       ;;
     \?)
-      usage "$package"
+      usage
       ;;
   esac
 done
