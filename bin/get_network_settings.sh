@@ -1,15 +1,21 @@
 #!/bin/bash
 
+script_name=$(basename "$0")
+
 function usage(){
 cat <<_EOT_
-Usage:
-  ${0} [-h]
+NAME
+       ${script_name}
 
-Description:
-  現在のネットワーク設定を表示します。
+USAGE:
+       ${script_name} [-h]
 
-Options:
-  -h ヘルプを表示します。
+
+DESCRIPTION:
+       現在のネットワーク設定を表示します。
+
+OPTIONS:
+       -h     ヘルプを表示します。
 _EOT_
 exit 1
 }
