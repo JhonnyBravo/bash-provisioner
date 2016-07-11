@@ -1,17 +1,27 @@
 #!/bin/bash
 
+script_name=$(basename "$0")
+
 function usage(){
 cat <<_EOT_
-Usage:
-  ${0} [-l path] [-p path] [-h]
+NAME
+       ${script_name}
 
-Description:
-  path の末尾または path の親ディレクトリを返します。
+USAGE:
+       ${script_name} [-l path] [-p path] [-h]
 
-Options:
-  -l path  path の末尾を返します。
-  -p path  path の親ディレクトリを返します。
-  -h ヘルプを表示します。
+
+DESCRIPTION:
+       パスの末尾、またはパスの親ディレクトリを返します。
+
+OPTIONS:
+       -l path
+              パスの末尾を返します。
+
+       -p path
+              パスの親ディレクトリを返します。
+
+       -h     ヘルプを表示します。
 _EOT_
 exit 1
 }
