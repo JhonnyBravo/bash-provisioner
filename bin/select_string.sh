@@ -1,20 +1,30 @@
 #!/bin/bash
 
+script_name=$(basename "$0")
+
 function usage(){
 cat <<_EOT_
-Usage:
-  ${0} -i pattern path
-  ${0} -e pattern path
-  ${0} -h
+NAME
+       ${script_name}
 
-Description:
-  path に指定したファイルを読み込み、
-  pattern に合致する行または合致しない行のみを表示します。
+USAGE:
+       ${script_name} -i pattern path
+       ${script_name} -e pattern path
+       ${script_name} -h
 
-Options:
-  -i pattern path  pattern に合致する行のみを表示します。
-  -e pattern path  pattern に合致しない行のみを表示します。
-  -h ヘルプを表示します。
+
+DESCRIPTION:
+       path に指定したファイルを読み込み、
+       pattern に合致する行または合致しない行のみを表示します。
+
+OPTIONS:
+       -i pattern path
+              pattern に合致する行のみを表示します。
+
+       -e pattern path
+              pattern に合致しない行のみを表示します。
+
+       -h     ヘルプを表示します。
 _EOT_
 exit 1
 }
