@@ -1,15 +1,27 @@
 #!/bin/bash
 
+script_name=$(basename "$0")
+
 function usage(){
 cat <<_EOT_
-Usage:
-  ${0} path key:value [-h]
+NAME
+       ${script_name}
 
-Description:
-  JSON ファイルの key の値を更新します。
+USAGE:
+       ${script_name} path key:value [-h]
 
-Options:
-  -h ヘルプを表示します。
+
+DESCRIPTION:
+       JSON ファイルのキーの値を更新します。
+
+ARGUMENTS:
+       path   JSON ファイルのパス。
+
+       key:value
+              キーの名前と新しい値。
+
+OPTIONS:
+       -h     ヘルプを表示します。
 _EOT_
 exit 1
 }
