@@ -1,15 +1,26 @@
 #!/bin/bash
 
+script_name=$(basename "$0")
+
 function usage(){
 cat <<_EOT_
-Usage:
-  ${0} path key [-h]
+NAME
+       ${script_name}
 
-Description:
-  JSON ファイルから key を削除します。
+USAGE:
+       ${script_name} path key [-h]
 
-Options:
-  -h ヘルプを表示します。
+
+DESCRIPTION:
+       JSON ファイルからキーを削除します。
+
+ARGUMENTS
+       path   JSON ファイルのパス。
+
+       key    削除するキーの名前。
+
+OPTIONS:
+       -h     ヘルプを表示します。
 _EOT_
 exit 1
 }
