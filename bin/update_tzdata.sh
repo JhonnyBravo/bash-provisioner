@@ -1,18 +1,24 @@
 #!/bin/bash
 
+script_name=$(basename "$0")
+
 while getopts "h" option
 do
   case $option in
     h)
       cat <<_EOT_
-Usage:
-  ${0} [-h]
+NAME
+       ${script_name}
 
-Description:
-  タイムゾーンを設定します。
+USAGE:
+       ${script_name} [-h]
 
-Options:
-  -h ヘルプを表示します。
+
+DESCRIPTION:
+       タイムゾーンを設定します。
+
+OPTIONS:
+       -h     ヘルプを表示します。
 _EOT_
       exit 1
       ;;
