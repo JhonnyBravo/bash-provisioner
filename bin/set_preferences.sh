@@ -1,18 +1,25 @@
 #!/bin/bash
 
+script_name=$(basename "$0")
 u_path=".config/sublime-text-2/Packages/User/"
 
 function usage(){
 cat <<_EOT_
-Usage:
-  ${0} path [-h]
+NAME
+       ${script_name}
 
-Description:
-  指定したファイルを ${u_path}Preferences.sublime-settings
-  へコピーします。
+USAGE:
+       ${script_name} path [-h]
 
-Options:
-  -h ヘルプを表示します。
+
+DESCRIPTION:
+       指定したファイルを ${u_path} へコピーします。
+
+ARGUMENTS:
+       path   コピーするファイルのパス。
+
+OPTIONS:
+       -h     ヘルプを表示します。
 _EOT_
 exit 1
 }
