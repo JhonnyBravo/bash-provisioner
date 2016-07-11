@@ -1,18 +1,24 @@
 #!/bin/bash
 
+script_name=$(basename "$0")
+
 while getopts "h" option
 do
   case $option in
     h)
       cat <<_EOT_
-Usage:
-  ${0} [-h]
+NAME
+       ${script_name}
 
-Description:
-  dash を有効化 / 無効化します。
+USAGE:
+       ${script_name} [-h]
 
-Options:
-  -h ヘルプを表示します。
+
+DESCRIPTION:
+       dash を有効化 / 無効化します。
+
+OPTIONS:
+       -h     ヘルプを表示します。
 _EOT_
       exit 1
       ;;
