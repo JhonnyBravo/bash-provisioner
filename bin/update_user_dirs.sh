@@ -1,21 +1,29 @@
 #!/bin/bash
 
+script_name=$(basename "$0")
+
 e_flag=0
 j_flag=0
 
 function usage(){
 cat <<_EOT_
-Usage:
-  ${0} [-e] [-j] [-h]
+NAME
+       ${script_name}
 
-Description:
-  ホームディレクトリ直下のディレクトリ名を英語化 / 日本語化します。
-  例) ~/ドキュメント -> ~/Documents
+USAGE:
+       ${script_name} [-e] [-j] [-h]
 
-Options:
-  -e ディレクトリ名を英語化します。
-  -j ディレクトリ名を日本語化します。
-  -h ヘルプを表示します。
+
+DESCRIPTION:
+       ホームディレクトリ直下のディレクトリ名を英語化 / 日本語化します。 
+       例) ~/ドキュメント -> ~/Documents
+
+OPTIONS:
+       -e     ディレクトリ名を英語化します。
+
+       -j     ディレクトリ名を日本語化します。
+
+       -h     ヘルプを表示します。
 _EOT_
 exit 1
 }
