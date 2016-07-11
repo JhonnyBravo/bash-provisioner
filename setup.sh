@@ -85,7 +85,7 @@ if [ $i_flag -eq 1 ]; then
   do
     source="${man_source}/${file}"
     gzip "$source"
-    cp "${source}.gz" "$man_destination"
+    install "${source}.gz" "$man_destination" -m 0644
   done
 elif [ $u_flag -eq 1 ]; then
   # スクリプトファイルのアンインストール
