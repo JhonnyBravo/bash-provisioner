@@ -1,21 +1,31 @@
 #!/bin/bash
 
+script_name=$(basename "$0")
+
 function usage(){
 cat <<_EOT_
-Usage:
-  ${0} path
-  ${0} [-l path] [-c path] [-h]
+NAME
+       ${script_name}
 
-Description:
-  path が実在すれば 0 を、存在しない場合は 1 を返します。
-  オプションを省略した場合、 
-  path がファイルであるかディレクトリであるかを区別せず、
-  実在する path であれば 0 を返します。
+USAGE:
+       ${script_name} path
+       ${script_name} [-l path] [-c path] [-h]
 
-Options:
-  -l path  path が実在し、かつファイルであれば 0 を返します。
-  -c path  path が実在し、かつディレクトリであれば 0 を返します。
-  -h ヘルプを表示します。
+
+DESCRIPTION:
+       パスが実在すれば 0 を、存在しない場合は 1 を返します。
+       オプションを省略した場合、
+       パスがファイルであるかディレクトリであるかを区別せず、
+       実在するパスであれば 0 を返します。
+
+OPTIONS:
+       -l path
+              パスが実在し、かつファイルであれば 0 を返します。
+
+       -c path
+              パスが実在し、かつディレクトリであれば 0 を返します。
+
+       -h     ヘルプを表示します。
 _EOT_
 exit 1
 }
