@@ -39,7 +39,6 @@ Contents:
    provision_python_tools.sh
    provision_shellcheck.sh
    provision_solaar.sh
-   provision_sublime_text.sh
    provision_ubuntu_make.sh
    provision_vim.sh
    update_shell.sh
