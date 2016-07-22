@@ -267,8 +267,6 @@ man_pages = [
         u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
     ('provision_solaar.sh', 'provision_solaar.sh',
         u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
-    ('provision_sublime_text.sh', 'provision_sublime_text.sh',
-        u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
     ('provision_ubuntu_make.sh', 'provision_ubuntu_make.sh',
         u'bash-powershell Documentation', [u'Jhonny Bravo'], 1),
     ('provision_vim.sh', 'provision_vim.sh',
