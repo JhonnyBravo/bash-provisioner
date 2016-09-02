@@ -8,19 +8,19 @@ NAME
        ${script_name}
 
 USAGE:
-       ${script_name} -in pattern path
+       command | ${script_name} -in pattern
        ${script_name} -h
 
 
 DESCRIPTION:
-       path に指定したファイルを読み込み、
+       パイプからの入力を受け取り、
        pattern に合致する行または合致しない行のみを表示します。
 
 OPTIONS:
-       -i pattern path
+       -i pattern
               pattern に合致する行のみを表示します。
 
-       -n pattern path
+       -n pattern
               pattern に合致しない行のみを表示します。
 
        -h     ヘルプを表示します。
@@ -51,12 +51,18 @@ done
 
 shift $((OPTIND - 1))
 pattern="$1"
-path="$2"
 
-if [ $i_flag -eq 1 ]; then
-  grep "${pattern}" <"$path"
-elif [ $n_flag -eq 1 ]; then
-  sed -e "/${pattern}/d" <"$path"
-elif [ $i_flag -eq 0 ] && [ $n_flag -eq 0 ]; then
+if [ -p /dev/stdin ]; then
+  while IFS= read -r line
+  do
+    if [ $i_flag -eq 1 ]; then
+      echo "$line" | grep "${pattern}"
+    elif [ $n_flag -eq 1 ]; then
+      echo "$line" | sed -e "/${pattern}/d"
+    elif [ $i_flag -eq 0 ] && [ $n_flag -eq 0 ]; then
+      usage
+    fi
+  done
+else
   usage
 fi
