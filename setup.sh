@@ -69,7 +69,7 @@ if [ $i_flag -eq 1 ]; then
   fi
 
   (
-    cd docs
+    cd docs || exit 2
     make clean man
   )
 
