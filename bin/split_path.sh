@@ -8,7 +8,8 @@ NAME
        ${script_name}
 
 USAGE:
-       ${script_name} [-l path] [-p path] [-h]
+       ${script_name} -lp path
+       ${script_name} -h
 
 
 DESCRIPTION:
@@ -54,6 +55,6 @@ if [ $l_flag -eq 1 ]; then
   basename "${path}"
 elif [ $p_flag -eq 1 ]; then
   dirname "${path}"
-elif [ $l_flag -eq 0 -a $p_flag -eq 0 ]; then
+elif [ $l_flag -eq 0 ] && [ $p_flag -eq 0 ]; then
   usage
 fi
