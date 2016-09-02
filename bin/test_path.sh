@@ -59,7 +59,7 @@ elif [ $c_flag -eq 1 ]; then
   shift $((OPTIND - 1))
   path="$1"
   test -d "${path}"
-elif [ $l_flag -eq 0 -a $c_flag -eq 0 ]; then
+elif [ $l_flag -eq 0 ] && [ $c_flag -eq 0 ]; then
   path="$1"
   test -e "${path}"
 fi
