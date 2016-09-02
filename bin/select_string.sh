@@ -8,8 +8,7 @@ NAME
        ${script_name}
 
 USAGE:
-       ${script_name} -i pattern path
-       ${script_name} -e pattern path
+       ${script_name} -in pattern path
        ${script_name} -h
 
 
@@ -21,7 +20,7 @@ OPTIONS:
        -i pattern path
               pattern に合致する行のみを表示します。
 
-       -e pattern path
+       -n pattern path
               pattern に合致しない行のみを表示します。
 
        -h     ヘルプを表示します。
@@ -30,16 +29,16 @@ exit 1
 }
 
 i_flag=0
-e_flag=0
+n_flag=0
 
-while getopts "ieh" option
+while getopts "inh" option
 do
   case $option in
     i)
       i_flag=1
       ;;
-    e)
-      e_flag=1
+    n)
+      n_flag=1
       ;;
     h)
       usage
@@ -56,8 +55,8 @@ path="$2"
 
 if [ $i_flag -eq 1 ]; then
   grep "${pattern}" <"$path"
-elif [ $e_flag -eq 1 ]; then
+elif [ $n_flag -eq 1 ]; then
   sed -e "/${pattern}/d" <"$path"
-elif [ $i_flag -eq 0 -a $e_flag -eq 0 ]; then
+elif [ $i_flag -eq 0 ] && [ $n_flag -eq 0 ]; then
   usage
 fi
