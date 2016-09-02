@@ -58,10 +58,10 @@ elif [ $u_flag -eq 1 ]; then
   apt-get purge $package
 elif [ $c_flag -eq 1 ]; then
   echo -n "ユーザ名を入力してください: "
-  read name
+  read -r name
 
   echo -n "E mail アドレスを入力してください: "
-  read email
+  read -r email
 
   git config --global color.ui auto
   git config --global user.name "$name"
