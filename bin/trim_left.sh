@@ -34,7 +34,7 @@ do
 done
 
 if [ -p /dev/stdin ]; then
-  while read line
+  while read -r line
   do
     echo "$line"
   done
