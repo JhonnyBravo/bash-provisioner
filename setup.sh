@@ -54,6 +54,8 @@ done
 script_list=$(ls "$script_source")
 
 if [ $i_flag -eq 1 ]; then
+  apt-get install ibus-mozc xdg-user-dirs-gtk
+
   # スクリプトファイルのインストール
   for file in $script_list
   do
