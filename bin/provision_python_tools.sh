@@ -3,7 +3,7 @@
 script_name=$(basename "$0")
 
 apt_pkg="python-pip python-sphinx python-tk"
-py_pkg="pip-init autopep8"
+py_pkg="pip-init autopep8 sphinx-intl"
 package="${apt_pkg} ${py_pkg}"
 
 i_flag=0
@@ -31,7 +31,7 @@ _EOT_
 exit 1
 }
 
-function requirements(){
+function new_requirements_list(){
   for pkg in $1;
   do
     echo "$pkg" >>"$2"
@@ -57,13 +57,13 @@ do
 done
 
 if [ $i_flag -eq 1 ]; then
-  requirements "$py_pkg" requirements.txt
+  new_requirements_list "$py_pkg" requirements.txt
   # shellcheck disable=SC2086
   apt-get install ${apt_pkg}
   pip install -r requirements.txt
   rm requirements.txt
 elif [ $u_flag -eq 1 ]; then
-  requirements "$py_pkg" requirements.txt
+  new_requirements_list "$py_pkg" requirements.txt
   pip uninstall -r requirements.txt
   # shellcheck disable=SC2086
   apt-get purge ${apt_pkg}
